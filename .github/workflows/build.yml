@@ -675,7 +675,7 @@ jobs:
 
           make O=out marble_defconfig
 
-          make -j$(nproc) O=out CC="ccache ${CLANG_ROOT}/clang" HOSTCC="ccache ${CLANG_ROOT}/clang" Image
+          make -j$(nproc) O=out KCFLAGS="-Wno-error=unused-function" CC="ccache ${CLANG_ROOT}/clang" HOSTCC="ccache ${CLANG_ROOT}/clang" Image
 
 
           echo "ccache status after build:"
@@ -1102,11 +1102,3 @@ jobs:
 
            ---
           " "${ASSETS[@]}"
-
-
-
-
-
-
-
-          
