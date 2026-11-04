@@ -714,6 +714,7 @@ jobs:
             else
               echo "::warning::SUSFS: PRIORITY_UID_FILTER is NOT enabled in out/.config"
             fi
+          fi
 
           make -j$(nproc) O=out KCFLAGS="-Wno-error=unused-function" CC="ccache ${CLANG_ROOT}/clang" HOSTCC="ccache ${CLANG_ROOT}/clang" Image
 
